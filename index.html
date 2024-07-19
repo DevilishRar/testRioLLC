@@ -1,0 +1,194 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rio</title>
+    <link rel="icon" href="rio.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .bg-dark-gray {
+            background-color: #1a1a1a;
+            transition: background-color 0.3s;
+        }
+        .hidden {
+            display: none;
+        }
+        .container {
+            padding-right: 2rem;
+            padding-left: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        .main-content {
+            margin-left: var(--main-content-move, 0); /* Adjust this value to move the text */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        .main-image {
+            width: 380px;
+            height: 380px;
+            margin-left: var(--main-image-move, 0); /* Adjust this value to move the image */
+            transition: filter 0.3s, transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+        header {
+            border-radius: 20px;
+            padding-right: 2rem;
+            padding-left: 2rem;
+            padding-top: 1rem; /* Adjust this value to add padding at the top */
+            padding-bottom: 1rem; /* Adjust this value to add padding at the bottom */
+            height: 3.5rem; /* Adjust this value to set the header height */
+            margin-top: 1rem; /* Adjust this value to detach the navbar from the top of the screen */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s, opacity 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.2s;
+        }
+        .right-side {
+            margin-right: 1rem; /* Adjust this value to move the right-side elements to the left */
+        }
+        .light-mode-bg {
+            background-color: #e8e4ec;
+        }
+        .card {
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s;
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #888;
+        }
+        .main-image:hover {
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .theme-toggle-btn {
+            background-color: transparent;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .theme-toggle-btn .fa-moon {
+            color: #000;
+        }
+        .dev-names {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <div class="container">
+        <header class="flex justify-between items-center py-6 bg-dark-gray">
+            <div class="flex items-center space-x-6">
+                <span class="text-xl font-bold">Rio</span>
+                <nav class="space-x-6">
+                    <a href="#" class="nav-link">Home</a>
+                </nav>
+            </div>
+            <div class="space-x-4 flex items-center right-side">
+                <a href="https://discord.gg/FU3sFDrXqh" class="hover:text-gray-400"><i class="fab fa-discord"></i></a>
+                <button class="theme-toggle-btn" id="theme-toggle"><i class="fas fa-sun"></i></button>
+            </div>
+        </header>
+
+        <main class="flex justify-between items-center mt-16">
+            <div class="text main-content">
+                <h1 class="text-5xl font-bold">Introducing <span class="text-gray-400">Rio</span></h1>
+                <p class="text-lg mt-4 text-gray-400">Unleash the potential of our stealthy executor</p>
+            </div>
+            <img src="rio.png" alt="Large circular design element placeholder" class="main-image">
+        </main>
+
+        <section class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-dark-gray p-6 rounded-lg text-left card">
+                <i class="fas fa-plus-circle text-gray-400 text-2xl"></i>
+                <h2 class="text-xl font-semibold mt-4">Development</h2>
+                <div class="dev-names text-gray-400 mt-4">
+                    <p>wumpus 👑</p>
+                    <p>alex</p>
+                    <p>altreaon</p>
+                    <p>bfl.ryannn</p>
+                    <p>Cable</p>
+                    <p>DaiPlayz</p>
+                    <p>steel</p>
+                    <p>DevilishRak</p>
+                </div>
+            </div>
+            <div class="bg-dark-gray p-6 rounded-lg text-left card">
+                <i class="fas fa-lock text-gray-400 text-2xl"></i>
+                <h2 class="text-xl font-semibold mt-4">Secure Solutions</h2>
+                <p class="text-gray-400">We prevent banwaves and secure Rio as the winning product</p>
+            </div>
+            <div class="bg-dark-gray p-6 rounded-lg text-left card">
+                <i class="fas fa-tachometer-alt text-gray-400 text-2xl"></i>
+                <h2 class="text-xl font-semibold mt-4">Scalable Performance</h2>
+                <p class="text-gray-400">Explore our custom-made UI featuring a <a href="#" class="text-gray-400 underline">Script-Hub-Library</a></p>
+            </div>
+        </section>
+
+        <footer class="text-center mt-16 py-6">
+            <p class="text-gray-400">Everything is rightfully owned by Rio!</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('bg-white');
+            document.body.classList.toggle('text-black');
+
+            document.querySelector('header').classList.toggle('bg-dark-gray');
+            document.querySelector('header').classList.toggle('light-mode-bg');
+
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.toggle('bg-dark-gray');
+                card.classList.toggle('bg-gray-200');
+            });
+
+            const mainImage = document.querySelector('.main-image');
+            if (document.body.classList.contains('bg-white')) {
+                mainImage.style.filter = 'invert(1)';
+            } else {
+                mainImage.style.filter = 'invert(0)';
+            }
+
+            const themeToggleButton = document.getElementById('theme-toggle');
+            const icon = themeToggleButton.querySelector('i');
+            if (icon.classList.contains('fa-sun')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    </script>
+</body>
+</html>
